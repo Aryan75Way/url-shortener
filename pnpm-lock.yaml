@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '-':
-        specifier: ^0.0.1
-        version: 0.0.1
       '@prisma/client':
         specifier: 6.3.1
         version: 6.3.1(prisma@6.3.1(typescript@5.7.3))(typescript@5.7.3)
@@ -35,12 +32,12 @@ importers:
       morgan:
         specifier: ^1.10.0
         version: 1.10.0
-      nanoid:
-        specifier: ^5.0.9
-        version: 5.0.9
       nodemon:
         specifier: ^3.1.9
         version: 3.1.9
+      shortid:
+        specifier: ^2.2.17
+        version: 2.2.17
       swagger-ui-express:
         specifier: ^5.0.1
         version: 5.0.1(express@4.21.2)
@@ -60,6 +57,9 @@ importers:
       '@types/morgan':
         specifier: ^1.9.9
         version: 1.9.9
+      '@types/shortid':
+        specifier: ^2.2.0
+        version: 2.2.0
       '@types/swagger-ui-express':
         specifier: ^4.1.7
         version: 4.1.7
@@ -104,9 +104,6 @@ importers:
         version: 5.7.3
 
 packages:
-
-  '-@0.0.1':
-    resolution: {integrity: sha512-3HfneK3DGAm05fpyj20sT3apkNcvPpCuccOThOPdzz8sY7GgQGe0l93XH9bt+YzibcTIgUAIMoyVJI740RtgyQ==}
 
   '@cspotcode/source-map-support@0.8.1':
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
@@ -284,6 +281,9 @@ packages:
 
   '@types/serve-static@1.15.7':
     resolution: {integrity: sha512-W8Ym+h8nhuRwaKPaDw34QUkwsGi6Rc4yYqvKFo5rm2FUEhCFbzVWrxXUxuKK8TASjWsysJY0nsmNCGhCOIsrOw==}
+
+  '@types/shortid@2.2.0':
+    resolution: {integrity: sha512-jBG2FgBxcaSf0h662YloTGA32M8UtNbnTPekUr/eCmWXq0JWQXgNEQ/P5Gf05Cv66QZtE1Ttr83I1AJBPdzCBg==}
 
   '@types/swagger-ui-express@4.1.7':
     resolution: {integrity: sha512-ovLM9dNincXkzH4YwyYpll75vhzPBlWx6La89wwvYH7mHjVpf0X0K/vR/aUM7SRxmr5tt9z7E5XJcjQ46q+S3g==}
@@ -1213,9 +1213,9 @@ packages:
   ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
 
-  nanoid@5.0.9:
-    resolution: {integrity: sha512-Aooyr6MXU6HpvvWXKoVoXwKMs/KyVakWwg7xQfv5/S/RIgJMy0Ifa45H9qqYy7pTCszrHzP21Uk4PZq2HpEM8Q==}
-    engines: {node: ^18 || >=20}
+  nanoid@3.3.8:
+    resolution: {integrity: sha512-WNLf5Sd8oZxOm+TzppcYk8gVOgP+l58xNy58D0nbUnOxOWRWvlcCV4kUF7ltmI6PsrLl/BgKEyS4mqsGChFN0w==}
+    engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
   natural-compare@1.4.0:
@@ -1485,6 +1485,9 @@ packages:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
 
+  shortid@2.2.17:
+    resolution: {integrity: sha512-GpbM3gLF1UUXZvQw6MCyulHkWbRseNO4cyBEZresZRorwl1+SLu1ZdqgVtuwqz8mB6RpwPkm541mYSqrKyJSaA==}
+
   side-channel-list@1.0.0:
     resolution: {integrity: sha512-FCLHtRD/gnpCiCHEiJLOwdmFP+wzCmDEkc9y7NsYxeF4u7Btsn1ZuwgwJGxImImHicJArLP4R0yX4c2KCrMrTA==}
     engines: {node: '>= 0.4'}
@@ -1722,8 +1725,6 @@ packages:
 
 snapshots:
 
-  '-@0.0.1': {}
-
   '@cspotcode/source-map-support@0.8.1':
     dependencies:
       '@jridgewell/trace-mapping': 0.3.9
@@ -1905,6 +1906,8 @@ snapshots:
       '@types/http-errors': 2.0.4
       '@types/node': 22.13.1
       '@types/send': 0.17.4
+
+  '@types/shortid@2.2.0': {}
 
   '@types/swagger-ui-express@4.1.7':
     dependencies:
@@ -3006,7 +3009,7 @@ snapshots:
 
   ms@2.1.3: {}
 
-  nanoid@5.0.9: {}
+  nanoid@3.3.8: {}
 
   natural-compare@1.4.0: {}
 
@@ -3296,6 +3299,10 @@ snapshots:
       shebang-regex: 3.0.0
 
   shebang-regex@3.0.0: {}
+
+  shortid@2.2.17:
+    dependencies:
+      nanoid: 3.3.8
 
   side-channel-list@1.0.0:
     dependencies:

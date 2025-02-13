@@ -28,7 +28,6 @@
     ]
   },
   "dependencies": {
-    "-": "^0.0.1",
     "@prisma/client": "6.3.1",
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",
@@ -37,8 +36,8 @@
     "express-async-handler": "^1.2.0",
     "express-validator": "^7.2.1",
     "morgan": "^1.10.0",
-    "nanoid": "^5.0.9",
     "nodemon": "^3.1.9",
+    "shortid": "^2.2.17",
     "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
@@ -47,6 +46,7 @@
     "@types/express": "^5.0.0",
     "@types/http-errors": "^2.0.4",
     "@types/morgan": "^1.9.9",
+    "@types/shortid": "^2.2.0",
     "@types/swagger-ui-express": "^4.1.7",
     "@typescript-eslint/eslint-plugin": "^8.23.0",
     "eslint": "^9.20.0",

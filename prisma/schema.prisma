@@ -7,33 +7,25 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-/**
- * Build a schema for the database for the following url shortener application:
- * Unique hash generation for URLs.
- * URL redirection to the original link.
- * Click tracking with analytics (e.g., location, browser, device).
- * Expiration dates for shortened URLs.
- */
-
 model Url {
   id             String           @id @default(cuid())
   originalUrl    String
   shortUrl       String           @unique
   createdAt      DateTime         @default(now())
   expiresAt      DateTime?
+  clickCount     Int              @default(0)
   clickAnalytics ClickAnalytics[]
 
   @@index([shortUrl])
 }
 
 model ClickAnalytics {
-  id         String   @id @default(cuid())
-  urlId      String
-  ip         String?
-  location   String?
-  userAgent  String?
-  clickCount Int      @default(0)
-  createdAt  DateTime @default(now())
+  id        String   @id @default(cuid())
+  urlId     String
+  ip        String?
+  location  String?
+  userAgent String?
+  createdAt DateTime @default(now())
 
   url Url @relation(fields: [urlId], references: [id])
 }
