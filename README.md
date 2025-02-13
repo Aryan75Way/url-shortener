@@ -23,6 +23,18 @@ And many more...
 Backend: Node.js (Express)
 Database: PostgreSQL
 
+## ER Diagram
+
+![ER Diagram](./public/url-shortener-er-diagram.png)
+
+## API Documentation
+
+- Swagger API Documentation is available at `/api-docs` route.
+
+```bash
+http://localhost:3000/api-docs
+```
+
 ## Running Locally
 
 > [!NOTE]  
