@@ -82,19 +82,19 @@ npx prisma migrate deploy
 npx prisma generate
 ```
 
-4. Install dependencies:
+6. Install dependencies:
 
 ```bash
 pnpm install
 ```
 
-5. Start the development server:
+7. Start the development server:
 
 ```bash
 pnpm dev
 ```
 
-6. Access the application in your browser:
+8. Access the application in your browser:
 
 ```bash
 http://localhost:3000/api-docs
