@@ -35,6 +35,16 @@ Database: PostgreSQL
 http://localhost:3000/api-docs
 ```
 
+## API Endpoints
+
+
+### User Routes
+| Method  |          Endpoint           |       Description        |
+|---------|-----------------------------|--------------------------|
+| POST    | `/api/url/shorten`          | shorten a link           |
+| GET     | `/api/url/{shortUrl}`       | visit shorten url        |
+| GET     | `/api/url/stats/{shortUrl}` | Check shortUrl Analytics |
+
 ## Running Locally
 
 > [!NOTE]  
