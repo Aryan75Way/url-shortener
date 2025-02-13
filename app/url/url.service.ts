@@ -2,10 +2,6 @@ import { prisma } from '../common/services/database.service'
 import { IUrl } from './url.dto'
 import shortid from 'shortid'
 
-const generateShortUrl = (url: string) => {
-    return shortid.generate();
-}
-
 /**
  * Database query to shorten a url, if it doesn't already exist in database
  * @param data - url data
@@ -26,7 +22,7 @@ export const shortenUrl = async (data: IUrl) => {
     const result = await prisma.url.create({
         data: {
             ...data,
-            shortUrl: generateShortUrl(data.originalUrl),
+            shortUrl: shortid.generate(),
         },
     })
     return result
@@ -58,7 +54,6 @@ export const redirectUrl = async (
     userAgent: string,
     location: string
 ) => {
-    // update clickAnalytics and increment click count
     const result = await prisma.url.update({
         where: {
             id: urlId,

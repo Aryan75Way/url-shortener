@@ -14,7 +14,7 @@
       "/url/shorten": {
         "post": {
           "summary": "Shorten a URL",
-          "description": "Accepts an original URL and an expiration date, and returns a shortened URL.",
+          "description": "Accepts an original URL and an expiration date yyyy-mm-dd, and returns a shortened URL.",
           "operationId": "shortenUrl",
           "tags": ["URL"],
           "requestBody": {
@@ -31,7 +31,6 @@
                     },
                     "expiresAt": {
                       "type": "string",
-                      "format": "date-time",
                       "description": "The expiration date of the shortened URL."
                     }
                   },
@@ -41,7 +40,7 @@
                   "example1": {
                     "value": {
                       "originalUrl": "https://example.com",
-                      "expiresAt": "2025-12-31T23:59:59Z"
+                      "expiresAt": "2025-12-31"
                     }
                   }
                 }

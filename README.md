@@ -59,6 +59,19 @@ PORT = 3000
 NODE_ENV = "development"
 ```
 
+4. Create .env file and add the following environment vaiable to it.
+
+```bash
+DATABASE_URL=
+```
+
+5. Run the following database migration command:
+
+```bash
+npx prisma migrate deploy
+npx prisma generate
+```
+
 4. Install dependencies:
 
 ```bash
@@ -74,5 +87,5 @@ pnpm dev
 6. Access the application in your browser:
 
 ```bash
-http://localhost:3000
+http://localhost:3000/api-docs
 ```
