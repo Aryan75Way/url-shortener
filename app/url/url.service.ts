@@ -32,6 +32,11 @@ export const shortenUrl = async (data: IUrl) => {
     return result
 }
 
+/**
+ * Database query to find a short URL
+ * @param shortUrl A short URL
+ * @returns original URL, if found (else throws an error)
+ */
 export const findShortUrl = async (shortUrl: string) => {
     const result = await prisma.url.findUnique({
         where: {
@@ -74,6 +79,11 @@ export const redirectUrl = async (
     return result;
 }
 
+/**
+ * Database query to get stats of a URL
+ * @param shortUrl A short URL
+ * @returns stats of a URL
+ */
 export const urlStats = async (shortUrl: string) => {
     // fetch url and populate clickAnalytics
     const url = await prisma.url.findUnique({

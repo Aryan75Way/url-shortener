@@ -41,6 +41,12 @@ export const redirectUrl = asyncHandler(async (req: Request, res: Response) => {
     res.redirect(url.originalUrl)
 })
 
+/**
+ * Method to get stats of a URL
+ * @param req - Request
+ * @param res - Response
+ * @returns stats of a URL
+ */
 export const urlStats = asyncHandler(async (req: Request, res: Response) => {
     const result = await urlService.urlStats(req.params.shortUrl)
     res.send(createResponse(result, 'Url stats'))
